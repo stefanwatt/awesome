@@ -51,12 +51,12 @@ yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto polkit-gnome materia-the
 
 Arch-Based Installs
 ```
-git clone https://github.com/ChrisTitusTech/titus-awesome ~/.config/awesome
+git clone https://github.com/stefanwatt/awesome ~/.config/awesome
 ```
 
 Debian-Based Installs
 ```
-git clone --branch debian https://github.com/ChrisTitusTech/titus-awesome ~/.config/awesome
+git clone --branch debian https://github.com/stefanwatt/awesome ~/.config/awesome
 ```
 
 ### 3) Set the themes
