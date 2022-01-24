@@ -60,8 +60,8 @@ button selected {
     text-color: @lightgreen;
 }
 inputbar {
-    background-color: @lightblack;
-    text-color: @lightgreen;
+    background-color: @lightgreen;
+    text-color: @lightblack;
     padding: 4px;
     border: 0px 0px 4px 0px;
 }
