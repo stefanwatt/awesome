@@ -7,7 +7,8 @@ local beautiful = require('beautiful')
 -- Theme
 beautiful.init(require('theme'))
 
-
+-- Collision
+require("collision")()
 -- Layout
 require('layout')
 
