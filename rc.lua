@@ -3,7 +3,6 @@ local awful = require('awful')
 local wibox = require("wibox")
 require('awful.autofocus')
 local beautiful = require('beautiful')
-
 -- Theme
 beautiful.init(require('theme'))
 
@@ -19,7 +18,7 @@ require('module.decorate-client')
 -- Backdrop causes bugs on some gtk3 applications
 --require('module.backdrop')
 require('module.exit-screen')
-require('module.quake-terminal')
+-- require('module.quake-terminal')
 
 -- Setup all configurations
 require('configuration.client')

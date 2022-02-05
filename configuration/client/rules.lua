@@ -29,6 +29,10 @@ awful.rules.rules = {
     rule_any = {name = {'QuakeTerminal'}},
     properties = {skip_decoration = true}
   },
+  {
+    rule = { class =  'yakuake' },
+    properties =  { floating = true }
+  },
   -- Titlebars
   {
     rule_any = {type = {'dialog'}, class = {'Wicd-client.py', 'calendar.google.com'}},

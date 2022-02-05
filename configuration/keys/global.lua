@@ -2,11 +2,15 @@ local awful = require('awful')
 require('awful.autofocus')
 local beautiful = require('beautiful')
 local hotkeys_popup = require('awful.hotkeys_popup').widget
-
 local modkey = require('configuration.keys.mod').modKey
 local altkey = require('configuration.keys.mod').altKey
 local apps = require('configuration.apps')
+local lain = require("lain")
 
+quakeInput = {
+  height = 0.4
+}
+local quake = lain.util.quake(quakeInput)
 -- Key bindings
 local globalKeys =
   awful.util.table.join(
@@ -15,10 +19,8 @@ local globalKeys =
   awful.key({modkey}, 'k', hotkeys_popup.show_help, {description = 'Show help', group = 'awesome'}),
   
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  awful.key({modkey}, 's', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  awful.key({modkey}, 'h', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
 
 -- Default client focus
@@ -44,7 +46,8 @@ local globalKeys =
     {modkey},
     'space',
     function()
-      awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
+      awful.spawn('/home/stefan/.config/rofi/launchers/colorful/launcher.sh')
+      
     end,
     {description = 'Main menu', group = 'awesome'}
   ),
@@ -185,80 +188,8 @@ local globalKeys =
   awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
  
   awful.key(
-    {altkey, 'Shift'},
-    'Right',
-    function()
-      awful.tag.incmwfact(0.05)
-    end,
-    {description = 'Increase master width factor', group = 'layout'}
-  ),
-  
-  awful.key(
-    {altkey, 'Shift'},
-    'Left',
-    function()
-      awful.tag.incmwfact(-0.05)
-    end,
-    {description = 'Decrease master width factor', group = 'layout'}
-  ),
-  
-  awful.key(
-    {altkey, 'Shift'},
-    'Down',
-    function()
-      awful.client.incwfact(0.05)
-    end,
-    {description = 'Decrease master height factor', group = 'layout'}
-  ),
-  
-  awful.key(
-    {altkey, 'Shift'},
-    'Up',
-    function()
-      awful.client.incwfact(-0.05)
-    end,
-    {description = 'Increase master height factor', group = 'layout'}
-  ),
-  
-  awful.key(
-    {modkey, 'Shift'},
-    'Left',
-    function()
-      awful.tag.incnmaster(1, nil, true)
-    end,
-    {description = 'Increase the number of master clients', group = 'layout'}
-  ),
-  
-  awful.key(
-    {modkey, 'Shift'},
-    'Right',
-    function()
-      awful.tag.incnmaster(-1, nil, true)
-    end,
-    {description = 'Decrease the number of master clients', group = 'layout'}
-  ),
-  
-  awful.key(
-    {modkey, 'Control'},
-    'Left',
-    function()
-      awful.tag.incncol(1, nil, true)
-    end,
-    {description = 'Increase the number of columns', group = 'layout'}
-  ),
-  
-  awful.key(
-    {modkey, 'Control'},
-    'Right',
-    function()
-      awful.tag.incncol(-1, nil, true)
-    end,
-    {description = 'Decrease the number of columns', group = 'layout'}
-  ),
-  
-  awful.key(
     {modkey},
-    'space',
+    'l',
     function()
       awful.layout.inc(1)
     end,
@@ -267,7 +198,7 @@ local globalKeys =
 
   awful.key(
     {modkey, 'Shift'},
-    'space',
+    'l',
     function()
       awful.layout.inc(-1)
     end,
@@ -289,16 +220,7 @@ local globalKeys =
   ),
 
   -- Dropdown application
-
-  awful.key(
-    {modkey},
-    'z',
-    function()
-      _G.toggle_quake()
-    end,
-    {description = 'dropdown application', group = 'launcher'}
-  ),
-
+  awful.key({ modkey, }, "z", function () quake:toggle() end),
   -- Widgets popups
   --[[awful.key(
     {altkey},

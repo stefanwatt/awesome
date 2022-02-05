@@ -50,19 +50,21 @@ local tags = {
 
 awful.layout.layouts = {
   awful.layout.suit.tile,
+  awful.layout.suit.tile.bottom,
   awful.layout.suit.max,
-  awful.layout.suit.floating
+  awful.layout.suit.floating,
 }
 
 awful.screen.connect_for_each_screen(
   function(s)
+    l = s.geometry.width > s.geometry.height and awful.layout.suit.tile or awful.layout.suit.tile.bottom
     for i, tag in pairs(tags) do
       awful.tag.add(
         i,
         {
           icon = tag.icon,
           icon_only = true,
-          layout = awful.layout.suit.tile,
+          layout=l,
           gap_single_client = false,
           gap = 4,
           screen = s,
