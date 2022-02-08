@@ -11,7 +11,8 @@ theme.font = 'Roboto medium 10'
 
 -- Primary
 theme.primary = mat_colors.indigo
-theme.primary.hue_500 = '#003f6b'
+-- Active Window Indicator/Border color
+theme.primary.hue_500 = '#EBCB8B'
 -- Accent
 theme.accent = mat_colors.pink
 
