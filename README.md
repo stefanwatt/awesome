@@ -60,7 +60,7 @@ git clone --branch debian https://github.com/stefanwatt/awesome ~/.config/awesom
 ```
 Lain
 ```
-git clone https://github.com/lcpz/lain.git ~/.config/awesome ~/.config/awesome/lain
+git clone https://github.com/lcpz/lain.git ~/.config/awesome/lain
 ```
 
 Collision
