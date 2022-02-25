@@ -58,7 +58,15 @@ Debian-Based Installs
 ```
 git clone --branch debian https://github.com/stefanwatt/awesome ~/.config/awesome
 ```
+Lain
+```
+git clone https://github.com/lcpz/lain.git ~/.config/awesome ~/.config/awesome/lain
+```
 
+Collision
+```
+git clone https://github.com/Elv13/collision ~/.config/awesome/collision
+```
 ### 3) Set the themes
 
 Start `lxappearance` to activate the **icon** theme and **GTK** theme.
