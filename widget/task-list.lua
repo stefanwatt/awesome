@@ -4,6 +4,7 @@ local dpi = require('beautiful').xresources.apply_dpi
 local capi = {button = _G.button}
 local gears = require('gears')
 local clickable_container = require('widget.material.clickable-container')
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 --- Common method to create buttons.
 -- @tab buttons
 -- @param object
@@ -189,6 +190,7 @@ local tasklist_buttons =
       awful.client.focus.byidx(1)
     end
   ),
+  cpu_widget(),
   awful.button(
     {},
     5,

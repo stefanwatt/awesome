@@ -13,7 +13,7 @@ return {
     lock = 'i3lock-fancy',
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
-    delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
+    delayed_screenshot = 'flameshot screen -p ~sudo /etc/init.d/bluetooth start/Pictures -d 5000',
     browser = 'brave',
     editor = 'neovide', -- gui text editor
     social = 'discord',
@@ -34,11 +34,12 @@ return {
      'flameshot',
      'synology-drive -minimized',
      --'steam -silent',
-    'feh --randomize --bg-fill ~/.wallpapers/*',
+    -- 'feh --randomize --bg-fill ~/.wallpapers/*',
     '/usr/bin/variety',
     'blueman-applet',
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
+    -- '~/.xprofile' -- Spawn "dirty" apps that can linger between sessions
   }
 }

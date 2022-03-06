@@ -28,7 +28,6 @@ _G.root.keys(require('configuration.keys.global'))
 -- {{{ Screen
 -- Reset wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal( "property::geometry", function(s) beautiful.wallpaper.maximized( beautiful.wallpaper, s, beautiful.wallpapers) end )
-
 -- Signal function to execute when a new client appears.
 _G.client.connect_signal(
   'manage',
@@ -69,3 +68,16 @@ _G.client.connect_signal(
     c.border_color = beautiful.border_normal
   end
 )
+-- awesome.connect_signal(
+--     'exit',
+--     function(args)
+--         awful.util.spawn('touch ~/.awesome-restart')
+--     end
+-- )
+-- awesome.connect_signal(
+--     'startup',
+--     function(args)
+--         awful.util.spawn('bash -c "rm ~/.awesome-restart || /home/stefan/.screenlayout/1H1L.sh"')
+--     end
+-- )
+awful.util.spawn_with_shell("~/.autostart.sh")
